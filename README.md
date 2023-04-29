@@ -28,12 +28,16 @@
 > 
 > ![image](https://user-images.githubusercontent.com/122415129/235302727-c1071f7c-e85c-4797-b215-8ed0d0045c6b.png)
 
-
 ---
 ### Задание 5.
 ##### Выведите Email каждого покупателя, разделив значение Email на две отдельных колонки: в первой колонке должно быть значение, указанное до @, во второй — значение, указанное после @.
+> select substring_index(email, '@', 1), substring_index(email, '@', -1) from customer;  
 > 
+> ![image](https://user-images.githubusercontent.com/122415129/235304205-2121658a-e461-48ef-9db6-51f10a2f332e.png)
 > 
+> select left(email, position('@' in email)) as 'before @', right(email, length(email) - position('@' in email)) as 'after @' from customer;
+> 
+> ![image](https://user-images.githubusercontent.com/122415129/235304269-49687087-65cf-4321-9901-ee49dd659aa6.png)
 
 ---
 ### Задание 6.
