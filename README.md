@@ -42,7 +42,11 @@
 ---
 ### Задание 6.
 ##### Доработайте запрос из предыдущего задания, скорректируйте значения в новых колонках: первая буква должна быть заглавной, остальные — строчными.
+> select  email, substring_index(email, '@', 1), concat(left (upper(substring_index(email, '@', 1)), 1), lower(substr((substring_index(email, '@',1)),2))) as '1',  
+substring_index(email, '@', -1), concat(left(upper(substring_index(email  , '@', -1)), 1), lower(substr((substring_index(email , '@',-1)),2))) as '2'
+from customer c;
 > 
-> 
+> ![image](https://user-images.githubusercontent.com/122415129/235308679-cb428931-d72a-49a1-bb52-e37ad6fc0801.png)
+
 
 ---
